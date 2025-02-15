@@ -85,7 +85,7 @@ void chassisMove::stop() {
  //x2, y2, z2 son giroscopio 
 
 //se llaman los valores dados por el acelerometro de la imu y por las velocidades de los motores.
-void chassisMove::LecturaDeDatos(float x1, float y1,float z1 ,float x2,float y2,float z2,  float leftFrontSpeed, float rightFrontSpeed, float rightBackSpeed, float leftBackSpeed){
+void chassisMove::LecturaDeDatos(float x1, float y1,float z1 ,float x2,float y2,float z2 ){
 
     float x1g = x1 * (9.81/16384.0);  // Conversión dependiendo del acelerometro es el de 16384 y el 9.81 es valor gravedad nos da asi la aceleracion en m/s^2
     float y1g = y1 * (9.81/16384.0);    //https://www.diarioelectronicohoy.com/blog/configurar-el-mpu6050 ----se que tal vez no es muy confiable pero es entendible 
@@ -97,6 +97,6 @@ void chassisMove::LecturaDeDatos(float x1, float y1,float z1 ,float x2,float y2,
     //para imprimir los valores dados por el acelerometro de la imu y por las velocidades de los motores.
    printf("Acelerómetro: X=%.2f , Y=%.2f , Z=%.2f \n", x 1g, y1g, z1g);
    printf("giroscopio: X=%.2f , Y=%.2f , Z=%.2f \n", x2g, y2g, z2g);
-   printf("velocidades llantas: LF=%.2f , RF=%.2f , RB=%.2f, LB=%.2f \n", leftFrontSpeed, rightFrontSpeed, rightBackSpeed, leftBackSpeed);
+   //printf("velocidades llantas: LF=%.2f , RF=%.2f , RB=%.2f, LB=%.2f \n", leftFrontSpeed, rightFrontSpeed, rightBackSpeed, leftBackSpeed);
 
 }
