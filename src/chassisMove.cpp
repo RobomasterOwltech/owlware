@@ -86,6 +86,16 @@ void chassisMove::stop() {
 
 //se llaman los valores dados por el acelerometro de la imu y por las velocidades de los motores.
 void chassisMove::LecturaDeDatos(float x1, float y1,float z1 ,float x2,float y2,float z2 ){
+    
+     // Leer los datos del acelerómetro
+    int16_t ax = IMU_ReadRegister16(0x3B);  // Eje X
+    int16_t ay = IMU_ReadRegister16(0x3D);  // Eje Y
+    int16_t az = IMU_ReadRegister16(0x3F);  // Eje Z
+
+    // Leer los datos del giroscopio
+    int16_t gx = IMU_ReadRegister16(0x43);  // Eje X
+    int16_t gy = IMU_ReadRegister16(0x45);  // Eje Y
+    int16_t gz = IMU_ReadRegister16(0x47);  // Eje Z
 
     float x1g = x1 * (9.81/16384.0);  // Conversión dependiendo del acelerometro es el de 16384 y el 9.81 es valor gravedad nos da asi la aceleracion en m/s^2
     float y1g = y1 * (9.81/16384.0);    //https://www.diarioelectronicohoy.com/blog/configurar-el-mpu6050 ----se que tal vez no es muy confiable pero es entendible 
