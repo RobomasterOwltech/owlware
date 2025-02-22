@@ -86,10 +86,10 @@ void chassisMove::stop() {
 
 //se llaman los valores dados por el acelerometro de la imu y por las velocidades de los motores.
 void chassisMove::LecturaDeDatos(float x1, float y1,float z1 ,float x2,float y2,float z2 ){
-    
+
      // Leer los datos del acelerómetro
-    int16_t ax = IMU_ReadRegister16(0x3B);  // Eje X
-    int16_t ay = IMU_ReadRegister16(0x3D);  // Eje Y
+    int16_t ax = IMU_ReadRegister16(0x3B);  // Eje X https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf
+    int16_t ay = IMU_ReadRegister16(0x3D);  // Eje Y  se encuentra en la pagina 7 del datasheet
     int16_t az = IMU_ReadRegister16(0x3F);  // Eje Z
 
     // Leer los datos del giroscopio
